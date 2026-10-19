@@ -1,0 +1,306 @@
+﻿
+<%@ Master Language="C#" AutoEventWireup="true"
+    CodeBehind="Admin.Master.cs"
+    Inherits="RxEvents.AdminMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0" />
+
+    <title>
+        <asp:Literal ID="PageTitleLiteral" runat="server"
+            Text="Admin Dashboard" />
+        | Rx Events Solutions
+    </title>
+
+    
+<link href="<%= ResolveUrl("~/Content/css/admin.css") %>"
+      rel="stylesheet"
+      type="text/css" />
+
+
+    <asp:ContentPlaceHolder
+        ID="HeadContent"
+        runat="server" />
+</head>
+
+<body id="AdminBody" runat="server">
+    <form id="AdminForm" runat="server">
+
+        <div class="admin-layout">
+
+            <!-- Sidebar -->
+            <aside class="admin-sidebar">
+
+                 <div class="rx-dashboard-logo">
+
+     <img src="Content/images/rx-events-logo.png"
+          alt="Rx Events Solutions" />
+
+ </div>
+
+                <div class="admin-menu-heading">
+                    MAIN MENU
+                </div>
+
+                <nav class="admin-nav">
+
+                    <asp:HyperLink
+                        ID="DashboardLink"
+                        runat="server"
+                        NavigateUrl="~/AdminDashboard.aspx"
+                        CssClass="admin-nav-link">
+                        <span class="nav-icon">⌂</span>
+                        <span>Dashboard</span>
+                    </asp:HyperLink>
+
+                    <asp:HyperLink
+                        ID="BookingsLink"
+                        runat="server"
+                        NavigateUrl="~/AdminBookings.aspx"
+                        CssClass="admin-nav-link">
+                        <span class="nav-icon">▣</span>
+                        <span>Bookings</span>
+                    </asp:HyperLink>
+
+                    <asp:HyperLink
+                        ID="EventsLink"
+                        runat="server"
+                        NavigateUrl="~/AdminEvents.aspx"
+                        CssClass="admin-nav-link">
+                        <span class="nav-icon">◇</span>
+                        <span>Events</span>
+                    </asp:HyperLink>
+
+                    <asp:HyperLink
+                        ID="PackagesLink"
+                        runat="server"
+                        NavigateUrl="~/AdminPackages.aspx"
+                        CssClass="admin-nav-link">
+                        <span class="nav-icon">♧</span>
+                        <span>Packages</span>
+                    </asp:HyperLink>
+
+                    <asp:HyperLink
+                        ID="ServicesLink"
+                        runat="server"
+                        NavigateUrl="~/AdminServices.aspx"
+                        CssClass="admin-nav-link">
+                        <span class="nav-icon">✧</span>
+                        <span>Services</span>
+                    </asp:HyperLink>
+
+                    <asp:HyperLink
+                        ID="CustomersLink"
+                        runat="server"
+                        NavigateUrl="~/AdminCustomers.aspx"
+                        CssClass="admin-nav-link">
+                        <span class="nav-icon">♙</span>
+                        <span>Customers</span>
+                    </asp:HyperLink>
+
+                    <asp:HyperLink
+                        ID="PaymentsLink"
+                        runat="server"
+                        NavigateUrl="~/AdminPayments.aspx"
+                        CssClass="admin-nav-link">
+                        <span class="nav-icon">¤</span>
+                        <span>Payments</span>
+                    </asp:HyperLink>
+
+                    <asp:HyperLink
+                        ID="StaffLink"
+                        runat="server"
+                        NavigateUrl="~/AdminStaff.aspx"
+                        CssClass="admin-nav-link">
+                        <span class="nav-icon">♧</span>
+                        <span>Staff</span>
+                    </asp:HyperLink>
+
+                    <asp:HyperLink
+                        ID="ReviewsLink"
+                        runat="server"
+                        NavigateUrl="~/AdminReviews.aspx"
+                        CssClass="admin-nav-link">
+                        <span class="nav-icon">☆</span>
+                        <span>Reviews</span>
+                    </asp:HyperLink>
+
+                    <asp:HyperLink
+                        ID="GalleryLink"
+                        runat="server"
+                        NavigateUrl="~/AdminGallery.aspx"
+                        CssClass="admin-nav-link">
+                        <span class="nav-icon">▧</span>
+                        <span>Gallery</span>
+                    </asp:HyperLink>
+
+                    <asp:HyperLink
+                        ID="ReportsLink"
+                        runat="server"
+                        NavigateUrl="~/AdminReports.aspx"
+                        CssClass="admin-nav-link">
+                        <span class="nav-icon">▥</span>
+                        <span>Reports</span>
+                    </asp:HyperLink>
+
+                </nav>
+
+                <div class="admin-menu-heading admin-settings-heading">
+                    CONFIGURATION
+                </div>
+
+                <nav class="admin-nav">
+
+                    <asp:HyperLink
+                        ID="SettingsLink"
+                        runat="server"
+                        NavigateUrl="~/AdminSettings.aspx"
+                        CssClass="admin-nav-link">
+                        <span class="nav-icon">⚙</span>
+                        <span>Settings</span>
+                    </asp:HyperLink>
+
+                    <asp:HyperLink
+                        ID="WebSettingsLink"
+                        runat="server"
+                        NavigateUrl="~/AdminWebSettings.aspx"
+                        CssClass="admin-nav-link">
+                        <span class="nav-icon">▤</span>
+                        <span>Website Settings</span>
+                    </asp:HyperLink>
+
+                </nav>
+
+                <div class="admin-sidebar-bottom">
+
+                    <div class="admin-sidebar-note">
+                        <span class="sidebar-note-dot"></span>
+                        Admin Workspace
+                    </div>
+
+                    <asp:HyperLink
+                        ID="LogoutLink"
+                        runat="server"
+                        NavigateUrl="~/Logout.aspx"
+                        CssClass="admin-logout">
+                        <span class="nav-icon">⇥</span>
+                        <span>Logout</span>
+                    </asp:HyperLink>
+
+                </div>
+
+            </aside>
+
+            <!-- Main area -->
+            <div class="admin-main">
+
+                
+<!-- Top bar -->
+<header class="admin-topbar">
+
+    <div class="rx-dashboard-header-left">
+        <button type="button"
+                class="rx-dashboard-menu"
+                aria-label="Menu">
+            ☰
+        </button>
+
+        <h1 class="admin-topbar-title">
+            <asp:Literal ID="HeaderTitleLiteral"
+                runat="server"
+                Text="Admin Dashboard" />
+        </h1>
+    </div>
+
+    <div class="admin-topbar-right">
+
+        <div class="admin-topbar-actions">
+            <asp:HyperLink ID="NotificationsLink"
+                runat="server"
+                NavigateUrl="~/AdminBookings.aspx"
+                CssClass="admin-topbar-icon"
+                ToolTip="Notifications">
+                ♧
+            </asp:HyperLink>
+
+            <asp:HyperLink ID="MessagesLink"
+                runat="server"
+                NavigateUrl="~/AdminReviews.aspx"
+                CssClass="admin-topbar-icon"
+                ToolTip="Messages">
+                ✉
+            </asp:HyperLink>
+        </div>
+
+        <asp:HyperLink ID="AdminProfileLink"
+            runat="server"
+            NavigateUrl="~/AdminProfile.aspx"
+            CssClass="admin-profile-link"
+            ToolTip="View admin profile">
+
+            <div class="admin-profile-card">
+                <div class="admin-profile-avatar">
+
+                    <asp:Image ID="AdminProfilePhoto"
+                        runat="server"
+                        CssClass="admin-topbar-avatar-image"
+                        AlternateText="Admin profile photo"
+                        Visible="false" />
+
+                    <asp:Label ID="AdminInitials"
+                        runat="server"
+                        Text="HT" />
+
+                </div>
+
+                <div class="admin-profile-info">
+                    <strong>
+                        <asp:Literal ID="AdminName"
+                            runat="server" />
+                    </strong>
+
+                    <span>System Administrator</span>
+                </div>
+            </div>
+
+        </asp:HyperLink>
+
+    </div>
+
+</header>
+
+                <!-- Page content -->
+                <main class="admin-content">
+
+                    <asp:ContentPlaceHolder
+                        ID="MainContent"
+                        runat="server" />
+
+                </main>
+
+                <!-- Footer -->
+                <footer class="admin-footer">
+
+                    <span>
+                        © <%= DateTime.Now.Year %>
+                        Rx Events Solutions.
+                        All rights reserved.
+                    </span>
+
+                    <span class="admin-footer-tagline">
+                        Making every moment memorable.
+                    </span>
+
+                </footer>
+
+            </div>
+
+        </div>
+
+    </form>
+</body>
+</html>

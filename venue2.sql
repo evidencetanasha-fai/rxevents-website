@@ -1,0 +1,2 @@
+﻿ALTER TABLE Bookings
+ADD VenueAddress VARCHAR(500) NULL;

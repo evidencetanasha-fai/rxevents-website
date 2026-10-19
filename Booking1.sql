@@ -1,0 +1,3 @@
+﻿
+ALTER TABLE dbo.Bookings
+ALTER COLUMN VenueID INT NULL;

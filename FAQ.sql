@@ -1,0 +1,13 @@
+﻿CREATE TABLE [dbo].[FAQs]
+(
+    [FAQID] INT IDENTITY(1,1) NOT NULL,
+    [Question] VARCHAR(255) NOT NULL,
+    [Answer] VARCHAR(1000) NOT NULL,
+    [Category] VARCHAR(50) NULL,
+    [DisplayOrder] INT NOT NULL CONSTRAINT [DF_FAQs_DisplayOrder] DEFAULT (0),
+    [IsActive] BIT NOT NULL CONSTRAINT [DF_FAQs_IsActive] DEFAULT (1),
+    [CreatedDate] DATETIME NOT NULL CONSTRAINT [DF_FAQs_CreatedDate] DEFAULT (GETDATE()),
+
+    CONSTRAINT [PK_FAQs]
+        PRIMARY KEY CLUSTERED ([FAQID] ASC)
+);

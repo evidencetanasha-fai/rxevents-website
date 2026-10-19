@@ -1,0 +1,3 @@
+﻿ALTER TABLE Users
+ADD DisplayMode VARCHAR(10) NOT NULL
+    CONSTRAINT DF_Users_DisplayMode DEFAULT ('Light');

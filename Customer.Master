@@ -1,0 +1,216 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true"
+    CodeBehind="Customer.Master.cs"
+    Inherits="RxEvents.Customer" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+
+    <meta charset="utf-8" />
+
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContent"
+            runat="server">
+            Rx Events Solutions
+        </asp:ContentPlaceHolder>
+    </title>
+
+    <asp:ContentPlaceHolder ID="head"
+        runat="server">
+    </asp:ContentPlaceHolder>
+
+    <link href="<%= ResolveUrl("~/Content/css/site.css") %>"
+        rel="stylesheet"
+        type="text/css" />
+
+</head>
+
+<body class="rx-dashboard-body">
+
+    <form id="form1" runat="server">
+
+        <div class="rx-dashboard-layout <%= GetThemeClass() %>">
+
+            <!-- ================= SIDEBAR ================= -->
+
+            <aside class="rx-dashboard-sidebar">
+
+                <div class="rx-dashboard-logo">
+
+                    <img src="Content/images/rx-events-logo.png"
+                         alt="Rx Events Solutions" />
+
+                </div>
+
+
+                <nav class="rx-dashboard-nav">
+
+    <a href="CustomerDashboard.aspx"
+       class="<%= GetNavClass("CustomerDashboard.aspx") %>">
+        <span class="rx-nav-icon">⌂</span>
+        <span>Dashboard</span>
+    </a>
+
+    <a href="BookEvent.aspx"
+       class="<%= GetNavClass("BookEvent.aspx") %>">
+        <span class="rx-nav-icon">▣</span>
+        <span>Book Event</span>
+    </a>
+
+    <a href="MyBookings.aspx"
+       class="<%= GetNavClass("MyBookings.aspx") %>">
+        <span class="rx-nav-icon">▤</span>
+        <span>My Bookings</span>
+    </a>
+
+    <a href="MyPayments.aspx"
+       class="<%= GetNavClass("MyPayments.aspx") %>">
+        <span class="rx-nav-icon">▭</span>
+        <span>My Payments</span>
+    </a>
+
+    <a href="Wishlist.aspx"
+       class="<%= GetNavClass("Wishlist.aspx") %>">
+        <span class="rx-nav-icon">♡</span>
+        <span>My Wishlist</span>
+    </a>
+
+    <a href="Reviews.aspx"
+       class="<%= GetNavClass("Reviews.aspx") %>">
+        <span class="rx-nav-icon">☆</span>
+        <span>Reviews</span>
+    </a>
+
+    <a href="Profile.aspx"
+       class="<%= GetNavClass("Profile.aspx") %>">
+        <span class="rx-nav-icon">♙</span>
+        <span>Profile</span>
+    </a>
+
+    <a href="Notifications.aspx"
+       class="<%= GetNavClass("Notifications.aspx") %>">
+        <span class="rx-nav-icon">♧</span>
+        <span>Notifications</span>
+    </a>
+
+    <a href="Support.aspx"
+       class="<%= GetNavClass("Support.aspx") %>">
+        <span class="rx-nav-icon">♧</span>
+        <span>Support</span>
+    </a>
+
+    <div class="rx-dashboard-sidebar-divider"></div>
+
+    <a href="Logout.aspx"
+       class="rx-dashboard-nav-item rx-dashboard-logout">
+        <span class="rx-nav-icon">↪</span>
+        <span>Logout</span>
+    </a>
+
+</nav>
+
+
+                <div class="rx-dashboard-sidebar-quote">
+
+                    <span>“</span>
+
+                    <p>
+                        Life is beautifully
+                        eventful.
+                    </p>
+
+                    <div></div>
+
+                </div>
+
+            </aside>
+
+
+            <!-- ================= MAIN AREA ================= -->
+
+            <div class="rx-dashboard-main">
+
+                <!-- Top bar -->
+
+                <header class="rx-dashboard-header">
+
+                    <div class="rx-dashboard-header-left">
+
+                        <button type="button"
+                                class="rx-dashboard-menu">
+                            ☰
+                        </button>
+
+                        <h1>Customer Dashboard</h1>
+
+                    </div>
+
+
+                    <div class="rx-dashboard-header-right">
+
+    <a href="Notifications.aspx"
+       class="rx-dashboard-notification">
+
+        ♧
+        <span></span>
+
+    </a>
+
+
+    <div class="rx-dashboard-profile">
+
+        <div class="rx-dashboard-profile-image">
+
+            <asp:Image
+                ID="NavbarProfileImage"
+                runat="server"
+                AlternateText="Profile Photo" />
+
+        </div>
+
+
+        <div class="rx-dashboard-user">
+
+            <strong>
+                <%= Session["FirstName"] ?? "Customer" %>
+                <%= Session["LastName"] ?? "" %>
+            </strong>
+
+            <small>
+                Customer
+            </small>
+
+        </div>
+
+
+        <!--<span class="rx-dashboard-profile-arrow">
+            ▼
+        </span>-->
+
+    </div>
+
+</div>
+
+                </header>
+
+
+                <!-- Page content -->
+
+                <main class="rx-dashboard-content">
+
+                    <asp:ContentPlaceHolder
+                        ID="MainContent"
+                        runat="server">
+                    </asp:ContentPlaceHolder>
+
+                </main>
+
+            </div>
+
+        </div>
+
+    </form>
+
+</body>
+</html>
