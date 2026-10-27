@@ -6,6 +6,8 @@
     CodeBehind="BookingDetails.aspx.cs"
     Inherits="RxEvents.BookingDetails" %>
 
+
+
 <asp:Content ID="HeadContent"
     ContentPlaceHolderID="head"
     runat="server">
